@@ -18,6 +18,7 @@ var invert = require('burl-invert');
 var burl = require('burl');
 
 var links = invert(burl());
+
 links.set({
   previous: 'mysite.com/?from=7654321',
   next: 'mysite.com/?until=1234567'

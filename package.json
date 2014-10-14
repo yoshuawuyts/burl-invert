@@ -1,6 +1,6 @@
 {
   "name": "burl-invert",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Invert the previous and next _link values",
   "main": "index.js",
   "scripts": {
