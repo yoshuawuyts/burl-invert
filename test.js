@@ -47,6 +47,31 @@ describe('set', function() {
     links._links._stash._prev.should.eql('456');
     links._links._stash._next.should.eql('123');
   });
+
+  it('should properly diff values', function() {
+    var links = invert(burl());
+
+    links.set({
+      previous: '123',
+      next: '456'
+    });
+
+    links.set({
+      previous: '124',
+      next: '455'
+    });
+
+    links._links._stash._prev.should.eql('455');
+    links._links._stash._next.should.eql('124');
+
+    links.set({
+      previous: '123',
+      next: '456'
+    });
+
+    links._links._stash._prev.should.eql('455');
+    links._links._stash._next.should.eql('124');
+  });
 });
 
 describe('get', function() {
@@ -57,7 +82,7 @@ describe('get', function() {
     links._links._stash._next = '123';
 
     var nw = links.get();
-    
+
     nw.previous.should.eql('123');
     nw.next.should.eql('456');
   });
